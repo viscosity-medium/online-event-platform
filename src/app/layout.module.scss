@@ -1,0 +1,19 @@
+.Layout {
+    overflow-x: hidden;
+    background: var(--background-gradient);
+    border-right: 1px solid var(--white);
+
+    &::-webkit-scrollbar {
+        width: 16px;
+    };
+
+    &::-webkit-scrollbar-track {
+        background: var(--white)
+    };
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--white);
+        border: 6px solid var(--lightBlue);
+        border-radius: 10px;
+    };
+}

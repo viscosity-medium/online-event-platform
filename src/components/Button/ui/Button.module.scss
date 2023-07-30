@@ -1,0 +1,73 @@
+.button {
+    height: 64px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0px 9px 20px 0px rgba(109, 175, 198, 0.30);
+    transition: 0.3s;
+    // __next 3 lines fix blurry effect onHover__
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    &:hover{
+        transform: scale(1.048) translateZ(0);
+    }
+};
+
+.standardWidth {
+    width: 244px;
+};
+
+.longWidth {
+    width: 749px;
+};
+
+.fullSizeWidth {
+    width: 100%;
+};
+
+.responsiveWidth {
+    width: auto;
+    transition: 0.7s;
+    &:hover{
+        transform: scale(1) translateZ(0);
+    }
+}
+
+.mainColor {
+    background: var(--color-palette-main);
+};
+
+.secondaryColor {
+    background: var(--color-palette-secondary);
+};
+
+.activeColor {
+    background: var(--color-palette-active);
+};
+
+.passiveColor {
+    background: var(--color-palette-passive);
+};
+
+.submitColor {
+    background: var(--color-palette-submit);
+};
+
+.noColor {
+    background: unset;
+}
+
+.borderWhite {
+    border: 1px solid var(--white);
+};
+
+.borderPeach {
+    border: 1px solid var(--peach);
+};
+
+.borderNone {
+    border: none;
+};

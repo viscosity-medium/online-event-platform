@@ -1,0 +1,65 @@
+.dropDownItemUnOrderList {
+    list-style-type: none;
+};
+
+.dropDownItemUnOrderListItem {
+    transition: 1.5s;
+    margin-bottom: 20px;
+};
+
+.noMargin{
+    margin-bottom: 0;
+};
+
+.dropDownItemButton {
+    padding: 12px 20px;
+    height: 72px;
+    &:hover{
+        transform: scale(1.024);
+    }
+};
+
+.dropDownItemTitle {
+    margin-left: 40px;
+    color: var(--veryDarkBlue);
+};
+
+.dropDownItemOuterTextWrapper {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+
+    .textContent {
+        position: relative;
+        transform: translateY(36px);
+        padding: 20px 32px 4px;
+        color: var(--veryDarkBlue);
+    };
+
+    .innerBottomDecoration{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 20px;
+        background-color: var(--white);
+    }
+
+    .fakeCurtain {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        transform: translateY(-36px);
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: var(--white);
+        opacity: 0.9;
+        z-index: -1;
+        transition: 1.5s;
+        border-radius: 0px 0px 5px 5px;
+    };
+};
+
+.fakeTextContent {
+    transition: 1.5s;
+}

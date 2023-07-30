@@ -1,0 +1,1 @@
+export {MasterProvider} from "./ui/masterProvider"

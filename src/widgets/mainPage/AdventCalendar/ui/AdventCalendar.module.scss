@@ -1,0 +1,11 @@
+.gridContainer{
+    display: grid;
+    //justify-content: center;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 12px;
+    //padding: 12px 16px 28px;
+    max-width: 100%;
+    height: auto;
+
+}

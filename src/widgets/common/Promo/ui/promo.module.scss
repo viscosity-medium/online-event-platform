@@ -1,0 +1,31 @@
+.promoSection {
+    height: 100vh;
+};
+
+.promoImage {
+    top: 0;
+    width: 100%;
+    object-position: 50% 0;
+};
+
+.contentGroup {
+    margin: 454px 0 0 244px;
+
+    .h1 {
+        font-size: 60px;
+        letter-spacing: 5px;
+    };
+
+    .buttonGroup {
+        max-width: 518px;
+        flex-wrap: wrap;
+
+        button{
+            margin: 0 5px 12px 5px;
+        }
+    };
+};
+
+
+
+
