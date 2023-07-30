@@ -1,19 +1,18 @@
-import {ExtendedCSSProperties, StyledDivContainer} from "@/components/DivContainer/ui/DivContainer.styled";
-import {FC} from "react";
+import {FC, HTMLAttributes} from "react";
 
-const DivContainer: FC<ExtendedCSSProperties> = ({
-    children
+const DivContainer: FC<HTMLAttributes<HTMLDivElement>> = ({
+    children,
+    className,
+    style
 }) => {
 
     return (
-        <StyledDivContainer
-            // height={""}
-            // beforeHeight={"150px"}
+        <div
+            className={className}
+            style={style}
         >
-            {/*{*/}
-            {/*    children*/}
-            {/*}*/}
-        </StyledDivContainer>
+            {children}
+        </div>
     );
 
 };

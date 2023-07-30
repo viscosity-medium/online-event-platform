@@ -1,13 +1,12 @@
 import {useEffect, useRef} from "react";
 import {UseResizeWindowProps} from "@/hooks/hooks.types";
 
-
 export const useResizeWindow = ({
 	functionToExecute,
     dependencies = []
 }: UseResizeWindowProps) => {
 
-    const windowSize = useRef(0)
+    const windowSize = useRef<number>(0)
 
     useEffect(() => {
 
@@ -24,5 +23,7 @@ export const useResizeWindow = ({
         return () => window.removeEventListener("resize", handleResize);
 
     }, [...dependencies]);
+
     return windowSize.current;
+
 };

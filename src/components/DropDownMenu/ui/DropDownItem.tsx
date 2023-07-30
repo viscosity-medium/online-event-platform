@@ -6,40 +6,33 @@ import DartBoard from "@/assets/mainPage/schedule/dartBoard.svg"
 import cls from "./DropDown.module.scss";
 import {HStack, VStack} from "@/components/Stack";
 import {Text} from "@/components/Text";
-import {useEffect, useRef, useState} from "react";
-import {before} from "node:test";
+import {FC, useRef, useState} from "react";
 import {useResizeWindow} from "@/hooks/hooks";
+import {resizeDropDownItem} from "@/components/DropDownMenu/model/DropDownMenu.helpers";
+import {Div} from "@/components/DivContainer";
+import {DropDownItemProps} from "@/components/DropDownMenu/model/DropDownMenu.types";
 
-const DropDownItem = () => {
+const DropDownItem: FC<DropDownItemProps> = ({
+    title,
+    description
+}) => {
 
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const [curtainHeight, setCurtainHeight] = useState<number>(0);
     const [textContentHeight, setTextContentHeight] = useState<number>(0);
     const listItemRef = useRef<HTMLLIElement>(null);
-    const textWrapperRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const resizeDropDownItem = () => {
-
-        if(isOpen && listItemRef.current){
-
-            const buttonHeight = buttonRef.current?.offsetHeight || 0;
-            const textContentHeight = contentRef.current?.offsetHeight || 0;
-            const listItemNodeStyle: CSSStyleDeclaration = window.getComputedStyle(listItemRef.current);
-            const listItemBottomMarginValue = +listItemNodeStyle.getPropertyValue('margin-bottom').replace(/px/,"");
-
-            setTextContentHeight(textContentHeight || 0);
-            setCurtainHeight(buttonHeight + textContentHeight + listItemBottomMarginValue);
-
-        }
-
+    const properties = {
+        isOpen, buttonRef, contentRef, listItemRef,
+        setTextContentHeight, setCurtainHeight
     };
 
    useResizeWindow({
-       functionToExecute: resizeDropDownItem,
+       functionToExecute: () => resizeDropDownItem(properties),
        dependencies: [isOpen]
-   })
+   });
 
     return (
         <li
@@ -66,17 +59,15 @@ const DropDownItem = () => {
                             tag={"p"}
                             className={cls.dropDownItemTitle}
                         >
-                            Привет
+                            {title}
                         </Text>
                     </HStack>
 
                 </Button>
-                <div
-                    ref={textWrapperRef}
+                <Div
                     className={cls.dropDownItemOuterTextWrapper}
                 >
-
-                    <div
+                    <Div
                         className={cls.fakeCurtain}
                         style={{
                             height: isOpen ? curtainHeight : 0,
@@ -87,22 +78,21 @@ const DropDownItem = () => {
                             reference={contentRef}
                             className={cls.textContent}
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid consequatur doloremque dolores, est eum magnam, maxime minima nesciunt obcaecati possimus praesentium quam recusandae repellat saepe soluta suscipit veritatis voluptates.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid consequatur doloremque dolores, est eum magnam, maxime minima nesciunt obcaecati possimus praesentium quam recusandae repellat saepe soluta suscipit veritatis voluptates.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid consequatur doloremque dolores, est eum magnam, maxime minima nesciunt obcaecati possimus praesentium quam recusandae repellat saepe soluta suscipit veritatis voluptates.
-
+                            {
+                                description
+                            }
                         </Text>
-                        <div
+                        <Div
                             className={cls.innerBottomDecoration}
                         />
-                    </div>
-                    <div
+                    </Div>
+                    <Div
                         className={cls.fakeTextContent}
                         style={{
                             height: isOpen ? textContentHeight : 0,
                         }}
-                    ></div>
-                </div>
+                    />
+                </Div>
             </VStack>
         </li>
     );

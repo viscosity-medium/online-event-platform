@@ -1,9 +1,11 @@
+$transitionSpeed: 0.8s;
+
 .dropDownItemUnOrderList {
     list-style-type: none;
 };
 
 .dropDownItemUnOrderListItem {
-    transition: 1.5s;
+    transition: $transitionSpeed;
     margin-bottom: 20px;
 };
 
@@ -55,11 +57,11 @@
         background-color: var(--white);
         opacity: 0.9;
         z-index: -1;
-        transition: 1.5s;
+        transition: $transitionSpeed;
         border-radius: 0px 0px 5px 5px;
     };
 };
 
 .fakeTextContent {
-    transition: 1.5s;
+    transition: $transitionSpeed;
 }
