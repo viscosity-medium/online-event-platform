@@ -1,3 +1,13 @@
+
+
+.swiper{
+    height: 580px;
+    padding: 0 20px;
+    --swiper-pagination-color: #FFFFFF;
+    --swiper-pagination-bullet-width: 16px;
+    --swiper-pagination-bullet-height: 16px;
+}
+
 .swiperSlide {
     width: fit-content;
 }

@@ -11,8 +11,8 @@ const resizeDropDownItem = (properties: ResizeDropDownItemProps) => {
         const listItemNodeStyle: CSSStyleDeclaration = window.getComputedStyle(listItemRef.current);
         const listItemBottomMarginValue = +listItemNodeStyle.getPropertyValue('margin-bottom').replace(/px/,"");
 
-        setTextContentHeight(textContentHeight || 0);
-        setCurtainHeight(buttonHeight + textContentHeight + listItemBottomMarginValue);
+        setTextContentHeight(textContentHeight + 20 || 0);
+        setCurtainHeight(buttonHeight + textContentHeight + listItemBottomMarginValue + 20);
 
     }
 

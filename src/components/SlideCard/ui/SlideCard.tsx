@@ -7,25 +7,29 @@ import {FC} from "react";
 import {SlideCardProps} from "@/components/SlideCard/model/SlideCard.types";
 
 const SlideCard: FC<SlideCardProps> = ({
+    reference,
     cardTitle,
     cardDescription,
     imageSource,
     imageAltDescription
 }) => {
 
+
     return (
         <VStack
+            reference={reference}
             className={cls.slideCard}
             justify={"between"}
         >
             <VStack
                 className={cls.infoContent}
+                align={"center"}
             >
                 <HStack>
                     <Image
                         src={imageSource}
                         alt={imageAltDescription}
-                        height={158}
+                        height={118}
                     />
                 </HStack>
                 <Text
@@ -39,7 +43,7 @@ const SlideCard: FC<SlideCardProps> = ({
                 </Text>
                 <Text
                     tag={"p"}
-                    align={"center"}
+                    align={"left"}
                     className={cls.description}
                 >
                     {

@@ -34,7 +34,7 @@ $transitionSpeed: 0.8s;
     .textContent {
         position: relative;
         transform: translateY(36px);
-        padding: 20px 32px 4px;
+        padding: 40px 32px 4px;
         color: var(--veryDarkBlue);
     };
 
@@ -55,7 +55,7 @@ $transitionSpeed: 0.8s;
         width: 100%;
         height: 100%;
         background-color: var(--white);
-        opacity: 0.9;
+        opacity: 0.95;
         z-index: -1;
         transition: $transitionSpeed;
         border-radius: 0px 0px 5px 5px;

@@ -31,7 +31,7 @@ export const slidersData: SlidersData = {
             imageAltDescription: "trees.svg"
         },
         {
-            cardTitle: "",
+            cardTitle: "Minecraft",
             cardDescription: "Любители созидать в виртуальных пространствах смогут принять участие в игре «Майнкрафт» на выделенном сервере. Полагаем, что во время рабочего дня, несмотря на непреодолимую тягу строить миры из кибер-кубиков, вы сможете дотерпеть до вчера. И никто не запрещает делегировать эту функцию детям!",
             imageSource: ActivityMinecraftImage,
             imageAltDescription: "target.svg"

@@ -1,6 +1,6 @@
 .slideCard {
-    width: 276px;
-    height: 452px;
+    width: 300px;
+    min-height: 524px;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -12,22 +12,20 @@
     background-color: var(--white);
 }
 
-.imageWrapper{
-    
-}
-
 .title {
-    margin: 50px 0 24px;
+    margin: 20px 0 8px;
     color: var(--veryDarkBlue);
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
+    user-select: none;
 }
 
 .description {
     font-size: 14px;
     font-weight: 400;
     color: var(--lightBlue);
+    user-select: none;
 }
 
 .cardButton {

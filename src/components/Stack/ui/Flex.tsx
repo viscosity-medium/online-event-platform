@@ -30,13 +30,13 @@ const gapClasses: Record<FlexGap, string> = {
 
 const Flex = (props: StackProps) => {
     const {
+        reference,
         className = '',
         children,
         justify = 'start',
         align = 'center',
         direction = 'row',
         gap,
-        max,
     } = props;
 
     const classes = [
@@ -46,14 +46,12 @@ const Flex = (props: StackProps) => {
         directionClasses[direction],
         gap && gapClasses[gap],
     ];
-    const mods: Mods = {
-        [cls.max]: max,
-    };
 
     return (
         <div
+            ref={reference}
             className={
-            	combineClassnames(cls.Flex, mods, classes)
+            	combineClassnames(cls.Flex, {}, classes)
         	}
         >
             {children}

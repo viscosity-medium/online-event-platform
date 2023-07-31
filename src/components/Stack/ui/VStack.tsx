@@ -7,6 +7,7 @@ const VStack = (props: StackPropsOmitted) => {
 
     return (
         <Flex
+            reference={props.reference}
             {...props}
             direction="column"
             align={align}
