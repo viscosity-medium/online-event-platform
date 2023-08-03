@@ -32,7 +32,7 @@ const Button: FC<ButtonProps> = ({
         fullSize: cls.fullSizeWidth,
         standard: cls.standardWidth,
         long: cls.longWidth,
-        none: cls.noColor
+        none: cls.noneSize
     };
 
     const classes = [

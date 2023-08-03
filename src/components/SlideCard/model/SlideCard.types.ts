@@ -1,13 +1,14 @@
-import {RefObject} from "react";
+import {StaticImageData} from "next/image";
+import {SlidersData} from "@/widgets/common/Slider/model/Sliders.types";
 
 export interface SlideCardProps {
-    cardTitle: string
-    cardDescription: string
-    imageSource: string
+    cardType: keyof SlidersData
+    giftTitle: string
+    giftDescription: string
+    buttonText: string
+    hrefLink: string
+    imageSource: string | StaticImageData
     imageAltDescription: string
-    reference?: RefObject<HTMLDivElement>
-}
-
-export interface SlideCardExtendedProps extends SlideCardProps{
-    price: number
+    giftPrice?: number
+    buttonTextAlt?: string
 }

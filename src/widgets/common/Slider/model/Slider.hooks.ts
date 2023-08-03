@@ -15,7 +15,11 @@ export const resizeSliderSize = ({
     // @ts-ignore
     const swiperNodeStyle: CSSStyleDeclaration = window.getComputedStyle(swiperRef.current);
     const swiperWidthValue = +swiperNodeStyle.getPropertyValue('width').replace(/px/,"");
+    const swiperPaddingValue = +swiperNodeStyle.getPropertyValue('padding-right').replace(/px/,"");
     const swiperMarginValue = (+swiperNodeStyle.getPropertyValue('margin-right').replace(/px/,"")) * 2;
+
+
+    console.log(swiperWidthValue)
 
     // @ts-ignore
     const swiperSlideCard = swiperRef.current?.children?.[0].children[0];
@@ -25,7 +29,7 @@ export const resizeSliderSize = ({
 
     const cardSizeWithMargin = (slidCardWidthValue + slidCardMarginValue);
     const cardsInSwiper = Math.floor((swiperWidthValue + swiperMarginValue) / cardSizeWithMargin)
-    const swiperWidthToSet = (cardsInSwiper !== 0 ? cardsInSwiper : 1)  * cardSizeWithMargin;
+    const swiperWidthToSet = (cardsInSwiper !== 0 ? cardsInSwiper : 1)  * cardSizeWithMargin + swiperPaddingValue;
 
     setSwiperWidth(swiperWidthToSet);
 

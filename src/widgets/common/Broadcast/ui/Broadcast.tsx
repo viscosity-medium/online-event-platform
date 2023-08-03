@@ -15,6 +15,7 @@ const Broadcast: FC<BroadcastProps> = ({
     return (
         <Section
         	hTag={"h2"}
+            id={"broadcast"}
             hTagText={hTagText}
         >
 		<BroadcastFrame

@@ -1,0 +1,23 @@
+.personalAccount{
+    position: relative;
+    height: auto;
+    padding: 0 208px 0;
+}
+
+.logoBig{
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    object-position: left;
+}
+
+.magicBall{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 7%;
+    height: 80%;
+    object-fit: contain;
+    object-position: right;
+}

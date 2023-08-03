@@ -1,11 +1,10 @@
-import {SlideCardExtendedProps, SlideCardProps} from "@/components/SlideCard/model/SlideCard.types";
-import {slidersData} from "@/widgets/common/Slider/model/Sliders.data";
+import {SlideCardProps} from "@/components/SlideCard/model/SlideCard.types";
 
 export interface SliderProps {
-    dataInfo: keyof SlidersData
+    dataInfoType: keyof SlidersData
 }
 
 export interface SlidersData {
-    activities: SlideCardProps[],
-    giftsShop: SlideCardExtendedProps[]
+    activities: Omit<SlideCardProps, "cardType">[],
+    giftsShop: Omit<SlideCardProps, "cardType">[]
 }

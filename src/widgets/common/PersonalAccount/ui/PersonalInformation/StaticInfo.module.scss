@@ -1,0 +1,33 @@
+.personalInfoItem {
+    margin-bottom: 8px;
+    padding: 8px 0 8px 12px;
+    width: 256px;
+    font-size: 18px;
+    line-height: 1;
+    border: 1px solid var(--fullOpaque);
+    p {
+        line-height: 1;
+    }
+}
+
+.textWrapper{
+    position: relative;
+}
+
+.underscoreLine{
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.editButton {
+    margin-top: 8px;
+    align-self: flex-end;
+    .editButtonText{
+        margin-right: 8px;
+    }
+}

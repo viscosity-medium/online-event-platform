@@ -1,5 +1,11 @@
 .MainContentWrapper {
     position: relative;
-    z-index: 2;
     margin: 0 192px;
 };
+
+@media only screen and (max-width: 1440px){
+
+    .MainContentWrapper {
+        margin: 0 50px;
+    }
+}

@@ -10,7 +10,7 @@ export type TextTag  = ('span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6');
 
 export type HTag = Exclude<TextTag, "span" | "p" | "h1">
 
-export type TextColor = "white" | "lightBlue" | "darkBlue";
+export type TextColor = "white" | "lightBlue" | "darkBlue" | "red";
 
 export interface TextProps {
     reference?: RefObject<HTMLDivElement>

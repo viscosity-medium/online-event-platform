@@ -1,18 +1,20 @@
 import {Section} from "@/components/Section";
-import {SlideCard} from "@/components/SlideCard/ui/SlideCard";
 import {Slider} from "@/widgets/common/Slider";
 
 const Activities = () => {
+
     return (
         <Section
             hTag={"h2"}
+            id={"activities"}
             hTagText={"Активности"}
         >
             <Slider
-                dataInfo={"activities"}
+                dataInfoType={"activities"}
             />
         </Section>
     );
+
 };
 
 export { Activities };

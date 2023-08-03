@@ -9,7 +9,7 @@ import {Text} from "@/components/Text";
 import {FC, useRef, useState} from "react";
 import {useResizeWindow} from "@/hooks/hooks";
 import {resizeDropDownItem} from "@/components/DropDownMenu/model/DropDownMenu.helpers";
-import {Div} from "@/components/DivContainer";
+import {Div} from "@/components/Div";
 import {DropDownItemProps} from "@/components/DropDownMenu/model/DropDownMenu.types";
 
 const DropDownItem: FC<DropDownItemProps> = ({

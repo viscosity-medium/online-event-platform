@@ -16,3 +16,14 @@ export const combineClassnames = (
     .join(" ");
 
 };
+
+const date = new Date();
+const fullStartDate = new Date("2023-08-02");
+const daysDivider = 1000 * 60 * 60 * 24;
+const currentDateSinceUnix = Math.floor(date.getTime() / daysDivider);
+const startDateSinceUnix = Math.floor(fullStartDate.getTime() / daysDivider);
+const daySinceStartDate = currentDateSinceUnix - startDateSinceUnix;
+export {
+    date,
+    daySinceStartDate
+}

@@ -9,6 +9,7 @@ import cls from "./promo.module.scss";
 const Promo = () => {
     return (
         <Section
+            id={"promo"}
         	className={cls.promoSection}
         >
             <VStack>

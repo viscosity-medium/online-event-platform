@@ -5,20 +5,45 @@ import {Image} from "@/components/Image";
 import {Text} from "@/components/Text";
 import {FC} from "react";
 import {SlideCardProps} from "@/components/SlideCard/model/SlideCard.types";
+import {defineButtonText} from "@/components/SlideCard/model/SlideCard.helpers";
 
 const SlideCard: FC<SlideCardProps> = ({
-    reference,
-    cardTitle,
-    cardDescription,
+    cardType,
+    giftTitle,
+    giftDescription,
     imageSource,
-    imageAltDescription
+    imageAltDescription,
+    giftPrice,
+    hrefLink,
+    buttonText,
+    buttonTextAlt
 }) => {
 
+    const userGoals = 0;
+    const {
+        definedButtonText,
+        extraButtonClass
+    } = defineButtonText({
+        cardType,
+        buttonText,
+        buttonTextAlt,
+        userGoals,
+        giftPrice
+    });
+
+    const cardClass = {
+        activities: cls.slideActivityCard,
+        giftsShop: cls.slideGiftCard
+    };
+
+    const extraClass = {
+        unavailableCard: cls.unavailableCard,
+        none: ""
+    }
 
     return (
         <VStack
-            reference={reference}
-            className={cls.slideCard}
+            className={`${cls.slideCard} ${cardClass[cardType]} ${extraClass[extraButtonClass]}`}
             justify={"between"}
         >
             <VStack
@@ -27,9 +52,9 @@ const SlideCard: FC<SlideCardProps> = ({
             >
                 <HStack>
                     <Image
+                        className={cls.cardImage}
                         src={imageSource}
                         alt={imageAltDescription}
-                        height={118}
                     />
                 </HStack>
                 <Text
@@ -38,16 +63,28 @@ const SlideCard: FC<SlideCardProps> = ({
                     className={cls.title}
                 >
                     {
-                        cardTitle
+                        giftTitle
                     }
                 </Text>
+                <hr className={cls.divider}/>
+                {
+                    giftPrice && (
+                        <Text
+                            tag={"h4"}
+                            className={cls.giftPrice}
+                            color={"lightBlue"}
+                        >
+                            {`${giftPrice} баллов`}
+                        </Text>
+                    )
+                }
                 <Text
                     tag={"p"}
                     align={"left"}
                     className={cls.description}
                 >
                     {
-                        cardDescription
+                        giftDescription
                     }
                 </Text>
             </VStack>
@@ -56,7 +93,11 @@ const SlideCard: FC<SlideCardProps> = ({
                 backgroundColor={"secondary"}
                 borderColor={"none"}
                 className={cls.cardButton}
-            >Пройти тест</Button>
+            >
+                {
+                    definedButtonText
+                }
+            </Button>
         </VStack>
     );
 

@@ -1,3 +1,5 @@
+'use client'
+
 import {DropDownItem} from "@/components/DropDownMenu/ui/DropDownItem";
 import cls from "./DropDown.module.scss"
 import {FC} from "react";
@@ -10,8 +12,9 @@ const DropDownMenu: FC<DropDownData> = ({
     return (
         <ul className={cls.dropDownItemUnOrderList}>
             {
-                dropdownData.map(dropdownDataItem => (
+                dropdownData.map((dropdownDataItem, index) => (
                     <DropDownItem
+                        key={`${index}__${dropdownDataItem.title}`}
                         title={dropdownDataItem.title}
                         description={dropdownDataItem.description}
                     />

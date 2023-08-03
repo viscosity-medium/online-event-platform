@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import {CommonLayout} from "@/components/CommonLayout";
 import {MasterProvider} from "@/providers";
+import {ReactNode} from "react";
 
 const font = localFont({src: "../fonts/rostelecom.woff2"})
 
@@ -15,10 +16,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
     children,
 }: {
-    children: React.ReactNode
+    children: ReactNode
 }) {
     return (
-        <html lang="en">
+        <html
+            lang="en"
+            className={cls.html}
+        >
             <body
                 className={
                 	`${font.className} ${cls.Layout}`

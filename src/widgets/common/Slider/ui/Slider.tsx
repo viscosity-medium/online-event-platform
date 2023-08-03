@@ -12,9 +12,10 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import {useResizeWindow} from "@/hooks/hooks";
 import {resizeSliderSize} from "@/widgets/common/Slider/model/Slider.hooks";
+import {SlideCardProps} from "@/components/SlideCard/model/SlideCard.types";
 
 const Slider: FC<SliderProps> = ({
-    dataInfo
+    dataInfoType,
 }) => {
 
     const swiperRef = useRef<SwiperRef>(null);
@@ -22,11 +23,13 @@ const Slider: FC<SliderProps> = ({
 
     useResizeWindow({
         functionToExecute: () => {
-            resizeSliderSize({swiperRef, setSwiperWidth})
+            resizeSliderSize({
+                swiperRef,
+                setSwiperWidth
+            })
         },
         dependencies: [swiperRef.current]
-    })
-
+    });
 
     return (
         <Swiper
@@ -45,18 +48,22 @@ const Slider: FC<SliderProps> = ({
             }}
         >
             {
-                slidersData[dataInfo].map((dataInfoItem, index) => {
+                slidersData[dataInfoType].map((dataInfoItem, index) => {
                     return (
                         <SwiperSlide
-                            key={`${dataInfoItem.cardTitle}__${dataInfoItem.imageAltDescription}`}
+                            key={`${dataInfoItem.giftTitle}__${dataInfoItem.imageAltDescription}`}
                             className={cls.swiperSlide}
                         >
                             <SlideCard
-                                // reference={index === 0 ? slideCardRef : undefined}
-                                cardTitle={dataInfoItem.cardTitle}
-                                cardDescription={dataInfoItem.cardDescription}
+                                cardType={dataInfoType}
+                                giftTitle={dataInfoItem.giftTitle}
+                                giftDescription={dataInfoItem.giftDescription}
                                 imageSource={dataInfoItem.imageSource}
                                 imageAltDescription={dataInfoItem.imageAltDescription}
+                                giftPrice={dataInfoItem.giftPrice}
+                                buttonText={dataInfoItem.buttonText}
+                                buttonTextAlt={dataInfoItem.buttonTextAlt}
+                                hrefLink={dataInfoItem.hrefLink}
                             />
                         </SwiperSlide>
                     )

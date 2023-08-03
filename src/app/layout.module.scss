@@ -1,5 +1,9 @@
+.html{
+    scroll-behavior: smooth;
+}
+
 .Layout {
-    overflow-x: hidden;
+    position: relative;
     background: var(--background-gradient);
     border-right: 1px solid var(--white);
 

@@ -1,11 +1,21 @@
 .hTag {
     margin-bottom: 36px;
     font-size: 32px;
-    text-align: center;
     color: var(--white);
     user-select: none;
 }
 
 .Section{
-	margin-bottom: 60px;
+	padding-top: 60px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+.textAlignStart {
+    text-align: start;
+}
+
+.textAlignEnd {
+    text-align: end;
 }

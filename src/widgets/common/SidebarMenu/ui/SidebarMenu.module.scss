@@ -1,0 +1,49 @@
+$asideWidth: 320px;
+
+.sidebarMenu {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    padding: 280px 0 0 46px ;
+    width: $asideWidth;
+    height: 100vh;
+    transition: 0.5s;
+    background-color: var(--whiteOpaque95);
+
+    .link {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--veryDarkBlue);
+        transition: 0.3s;
+        &:hover{
+            color: var(--color-palette-secondary);
+            transform: scale(1.05);
+        };
+    };
+
+    .closeBtn{
+        top: 20px;
+        left: 46px;
+        height: 28px;
+        position: absolute;
+
+        .closeCross{
+            width: 16px;
+            height: 16px;
+        };
+
+        .closeText{
+            margin-left: 8px;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--lightPurple);
+        };
+    };
+
+};
+
+.menuIsClosed{
+    right: -$asideWidth
+}

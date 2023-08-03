@@ -7,6 +7,7 @@ const Faq = () => {
     return (
         <Section
             hTag={"h2"}
+            id={"faq"}
             hTagText={"FAQ"}
         >
             <DropDownMenu

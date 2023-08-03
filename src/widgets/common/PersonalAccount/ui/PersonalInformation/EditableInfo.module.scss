@@ -1,0 +1,15 @@
+.personalInfoItem {
+    margin-bottom: 8px;
+    line-height: 1;
+    p {
+        line-height: 1;
+    }
+}
+
+.saveButton {
+    margin-top: 8px;
+    align-self: flex-end;
+    .saveButtonText{
+        margin-right: 8px;
+    }
+}

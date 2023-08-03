@@ -36,6 +36,7 @@ const AdventCalendar = () => {
     return (
         <Section
             hTag={"h2"}
+            id={"advent-calendar"}
             hTagText={"Адвент-календарь"}
         >
 		<div

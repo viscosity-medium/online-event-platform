@@ -1,38 +1,139 @@
-.slideCard {
+.slideCard{
+    box-sizing: border-box;
     width: 300px;
     min-height: 524px;
     overflow: hidden;
     border-radius: 20px;
+    transition: 0.3s;
+
+    &:hover{
+        transform: scale(1.04) rotate(3deg);
+
+        //.cardButton{
+        //    background-color: var(--color-palette-secondary);
+        //    color: var(--white);
+        //    transform: unset;
+        //}
+    }
+
 }
 
-.infoContent {
-    flex: 1;
-    z-index: 2;
-    padding: 24px 20px 28px;
-    background-color: var(--white);
+.slideActivityCard {
+
+
+    .cardImage{
+        height: 118px;
+        object-fit: contain;
+    }
+
+    .infoContent {
+        flex: 1;
+        z-index: 2;
+        padding: 24px 20px 28px;
+        background-color: var(--white);
+    }
+
+    .title {
+        margin: 20px 0 8px;
+        color: var(--veryDarkBlue);
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        user-select: none;
+    }
+
+    .description {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--lightBlue);
+        user-select: none;
+    }
+
 }
 
-.title {
-    margin: 20px 0 8px;
-    color: var(--veryDarkBlue);
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    user-select: none;
-}
+.slideGiftCard{
 
-.description {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--lightBlue);
-    user-select: none;
+    .cardImage{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 20px;
+    }
+
+    .infoContent {
+        flex: 1;
+        z-index: 2;
+        padding: 24px 20px 28px;
+        background-color: var(--white);
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        min-height: 42px;
+        margin: 20px 0 8px;
+        color: var(--veryDarkBlue);
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        user-select: none;
+    }
+
+    .divider {
+        width: 45px;
+        height: 2px;
+        flex-shrink: 0;
+        border: none;
+        background-color: var(--color-palette-secondary);
+    }
+
+    .giftPrice{
+        margin: 8px 0px 20px;
+        text-align: center;
+        font-size: 21px;
+        color: var(--color-palette-secondary);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .description {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--lightBlue);
+        text-align: center;
+        user-select: none;
+    }
+
 }
 
 .cardButton {
+    z-index: 1;
     text-align: center;
     font-size: 16px;
     font-weight: 400;
     border-radius: unset;
-    color: var(--white);
-    z-index: 1;
+    border-top: 2px solid var(--color-palette-secondary);
+    background-color: var(--white);
+    color: var(--lightBlue);
+    &:hover {
+        background-color: var(--color-palette-secondary);
+        color: var(--white);
+        transform: unset;
+    }
+}
+
+.unavailableCard{
+    &::after{
+        position: absolute;
+        content: "";
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background-color: #e1e1e1;
+        opacity: 0.4;
+        border-radius: 20px;
+    }
+    &:hover{
+        transform: unset;
+    }
 }

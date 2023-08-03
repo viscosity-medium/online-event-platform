@@ -1,0 +1,58 @@
+.quizSection{
+    margin: 20px 100px 0;
+}
+
+.quizWindowContent {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.buttonWrapper {
+    margin-top: 56px;
+    flex-wrap: wrap;
+
+    button {
+        z-index: 1;
+        margin: 0 8px 8px;
+        padding: 0 80px;
+        width: 45%;
+        min-width: 300px;
+        &:hover{
+            z-index: 2;
+            transform: scale(1.02);
+        }
+    }
+}
+
+.submitButton {
+    margin-top: 48px;
+}
+
+.quizResultsCard {
+    padding: 24px 12px;
+    width: 320px;
+    min-height: 540px;
+    border-radius: 20px;
+    border: 1px solid #DA3153;
+    background: #FFF;
+    .quizResultsTitle{
+        width: 100%;
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--lightBlue);
+        text-transform: uppercase;
+    }
+    .quizResultsImage{
+        width: 205px;
+        margin: 20px 0 12px;
+    }
+    .quizResultsDescription{
+        color: var(--lightBlue);
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .quizResultsButton{
+        margin-top: 12px;
+    }
+}

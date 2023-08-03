@@ -1,6 +1,7 @@
 .text {
     color: var(--secondary-color);
     line-height: 1.2;
+    white-space: break-spaces;
 }
 
 .white{
@@ -13,6 +14,10 @@
 
 .darkBlue{
     color: var(--darkBlue);
+}
+
+.red{
+    color: var(--color-palette-secondary);
 }
 
 // ______
@@ -50,26 +55,4 @@
     text-align: center;
 }
 
-.size_m {
-    .title {
-        font-size: var(--font-size-l);
-        line-height: var(--font-line-l);
-    }
 
-    .text {
-        font-size: var(--font-size-m);
-        line-height: var(--font-line-m);
-    }
-}
-
-.size_l {
-    .title {
-        font-size: var(--font-size-xl);
-        line-height: var(--font-line-xl);
-    }
-
-    .text {
-        font-size: var(--font-size-l);
-        line-height: var(--font-line-l);
-    }
-}
