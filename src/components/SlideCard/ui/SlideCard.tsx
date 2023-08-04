@@ -3,9 +3,10 @@ import {Button} from "@/components/Button";
 import cls from "./SlideCard.module.scss"
 import {Image} from "@/components/Image";
 import {Text} from "@/components/Text";
-import {FC} from "react";
+import {FC, useRef} from "react";
 import {SlideCardProps} from "@/components/SlideCard/model/SlideCard.types";
 import {defineButtonText} from "@/components/SlideCard/model/SlideCard.helpers";
+import Link from "next/link";
 
 const SlideCard: FC<SlideCardProps> = ({
     cardType,
@@ -19,23 +20,24 @@ const SlideCard: FC<SlideCardProps> = ({
     buttonTextAlt
 }) => {
 
+    const linkRef = useRef<HTMLAnchorElement>(null);
+
+    const onButtonClick = () => {
+        linkRef.current?.click();
+    };
+
     const userGoals = 0;
     const {
         definedButtonText,
         extraButtonClass
     } = defineButtonText({
-        cardType,
-        buttonText,
-        buttonTextAlt,
-        userGoals,
-        giftPrice
+        cardType, buttonText,
+        buttonTextAlt, userGoals, giftPrice
     });
-
     const cardClass = {
         activities: cls.slideActivityCard,
         giftsShop: cls.slideGiftCard
     };
-
     const extraClass = {
         unavailableCard: cls.unavailableCard,
         none: ""
@@ -93,11 +95,16 @@ const SlideCard: FC<SlideCardProps> = ({
                 backgroundColor={"secondary"}
                 borderColor={"none"}
                 className={cls.cardButton}
+                onClick={onButtonClick}
             >
                 {
                     definedButtonText
                 }
             </Button>
+            <Link
+                ref={linkRef}
+                href={hrefLink}
+            />
         </VStack>
     );
 

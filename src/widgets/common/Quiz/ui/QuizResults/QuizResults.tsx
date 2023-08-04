@@ -9,6 +9,7 @@ import {getUserQuizScore} from "@/widgets/common/Quiz/model/Quiz.selectors";
 
 import {useRef} from "react";
 import Link from "next/link";
+import {useTypedSelector} from "@/store/store";
 
 const QuizResults = () => {
 
@@ -16,7 +17,7 @@ const QuizResults = () => {
     const onSubmitButton = () => {
         linkRef.current?.click();
     };
-    const userScore = useSelector(getUserQuizScore);
+    const userScore = useTypedSelector(getUserQuizScore);
     const {
         title,
         description,

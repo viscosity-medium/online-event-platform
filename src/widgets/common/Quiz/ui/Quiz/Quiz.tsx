@@ -9,6 +9,7 @@ import {Section} from "@/components/Section";
 import cls from "@/widgets/common/Quiz/ui/Quiz/Quiz.module.scss";
 import { VStack } from "@/components/Stack";
 import {useResetQuizParameters} from "@/widgets/common/Quiz/model/Quiz.hooks";
+import {useTypedSelector} from "@/store/store";
 
 const Quiz: FC<QuizProps> = ({
     quizContentItem,
@@ -17,7 +18,7 @@ const Quiz: FC<QuizProps> = ({
     useResetQuizParameters();
 
     const contentLength = getQuizStaticContent().length;
-    const currentQuestionIndex = useSelector(getQuizCurrentQuestionIndex);
+    const currentQuestionIndex = useTypedSelector(getQuizCurrentQuestionIndex);
     const contentToDisplay = contentLength !== currentQuestionIndex + 1 ? (
         <QuizContent
             quizContentItem={quizContentItem}

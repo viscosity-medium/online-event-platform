@@ -32,6 +32,7 @@ const BroadcastFrame: FC<FrameProps> = ({
     return (
         <HStack
             className={combineClassnames(className,{}, classes)}
+            justify={"center"}
         >
             {
                 decorativeFrameType !== "none" &&
@@ -39,11 +40,15 @@ const BroadcastFrame: FC<FrameProps> = ({
             }
             {
                 embeddedFrameType !== "none" &&
-                <iframe
-                    src={embeddedFrameSrc}
-                    className={cls.iFrameInner}
-                />
-
+                <>
+                    <iframe
+                        src={embeddedFrameSrc}
+                        className={cls.iFrameInner}
+                    />
+                    {
+                        children
+                    }
+                </>
             }
         </HStack>
     );

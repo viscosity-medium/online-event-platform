@@ -16,6 +16,7 @@ const Page = () => {
                 <Broadcast
                 	hTagText={"Трансляция"}
                     decorativeColors={["outer", "middle", "inner"]}
+                    embeddedFrameSrc={"https://www.youtube.com/embed/doO5R2xZMFI"}
                 />
                 <AdventCalendar/>
                 {/*<Schedule/>*/}

@@ -1,22 +1,22 @@
 import {FC} from 'react';
 import {Section} from "@/components/Section";
 import {BroadcastFrame} from "@/components/BroadcastFrame/ui/BroadcastFrame";
-import {DecorativeFrameType} from "@/components/BroadcastFrame/model/BorderFrame.types";
-
-interface BroadcastProps {
-    hTagText: string
-    decorativeColors: [DecorativeFrameType, DecorativeFrameType, DecorativeFrameType]
-}
+import {BroadcastProps} from "@/widgets/common/Broadcast/model/Broadcast.type";
 
 const Broadcast: FC<BroadcastProps> = ({
 	hTagText,
-	decorativeColors
+	decorativeColors,
+    textAlign = "center",
+    internalContent,
+    instructionIsShown,
+    embeddedFrameSrc
 }) => {
     return (
         <Section
         	hTag={"h2"}
             id={"broadcast"}
             hTagText={hTagText}
+            textAlign={textAlign}
         >
 		<BroadcastFrame
             decorativeFrameType={decorativeColors[0]}
@@ -29,8 +29,12 @@ const Broadcast: FC<BroadcastProps> = ({
                 >
                     <BroadcastFrame
                         embeddedFrameType={"iFrame"}
-                        embeddedFrameSrc={"https://www.youtube.com/embed/doO5R2xZMFI"}
-                    />
+                        embeddedFrameSrc={embeddedFrameSrc}
+                    >
+                        {
+                            instructionIsShown && internalContent
+                        }
+                    </BroadcastFrame>
                 </BroadcastFrame>
             </BroadcastFrame>
         </BroadcastFrame>

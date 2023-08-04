@@ -38,7 +38,7 @@ export const sidebarMenuData = [
     },
     {
         name: "Майнкрафт",
-        link: "/minecraft"
+        link: "/minecraft#broadcast"
     },
     {
         name: "FAQ",

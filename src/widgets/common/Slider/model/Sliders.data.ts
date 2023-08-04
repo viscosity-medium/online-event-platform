@@ -18,7 +18,7 @@ export const slidersData: SlidersData = {
             imageSource: ActivityMagicBallImage,
             imageAltDescription: "magic-ball.svg",
             buttonText: "Пройти тест",
-            hrefLink: ""
+            hrefLink: "/quiz"
         },
         {
             giftTitle: "\"ДОМАШНЯ ЕЛКА\"",

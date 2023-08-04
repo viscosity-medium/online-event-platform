@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 import {getQuizCurrentQuestionIndex} from "@/widgets/common/Quiz/model/Quiz.selectors";
 import {FC, useState} from "react";
 import {QuizProps} from "@/widgets/common/Quiz/model/Quiz.types";
-import {useAppDispatch} from "@/store/store";
+import {useAppDispatch, useTypedSelector} from "@/store/store";
 import {onSubmitButtonClickHelper} from "@/widgets/common/Quiz/model/Quiz.helpers";
 import cls from "../Quiz/Quiz.module.scss";
 
@@ -15,7 +15,7 @@ const QuizContent: FC<QuizProps> = ({
 }) => {
 
     const dispatch = useAppDispatch();
-    const currentQuestionIndex = useSelector(getQuizCurrentQuestionIndex);
+    const currentQuestionIndex = useTypedSelector(getQuizCurrentQuestionIndex);
     const [activeButtonIndex, setActiveButtonIndex] = useState<undefined | number>(undefined);
 
     const onAnswerButtonClick = (index: number) => {

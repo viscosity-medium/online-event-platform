@@ -14,7 +14,7 @@ const AppHeader: FC<AppHeaderProps> = ({children}) => {
 
     const pathname = usePathname()
 
-    const headerPosition = pathname === "/" ? cls.positionAbsolute : cls.positionRelative;
+    const headerPosition =  ["/", "/minecraft"].includes(pathname) ? cls.positionAbsolute : cls.positionRelative;
 
     return (
         <header className={`${cls.AppHeader} ${headerPosition}`}>

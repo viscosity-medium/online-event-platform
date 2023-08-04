@@ -9,14 +9,14 @@ import cls from "./StaticInfo.module.scss"
 import {useSelector} from "react-redux";
 import {getUserPersonalInfo} from "@/widgets/common/PersonalAccount/model/PersonalAccount.selectors";
 import {UserPersonalInfo} from "@/widgets/common/PersonalAccount/model/PersonalAccount.type";
-import {useAppDispatch} from "@/store/store";
+import {useAppDispatch, useTypedSelector} from "@/store/store";
 import {personalAccountActions} from "@/widgets/common/PersonalAccount/model/PersonalAccount.slice";
 import {personalAccountData} from "@/widgets/common/PersonalAccount/model/PersonalAccount.data";
 
 const StaticInfo = () => {
 
     const dispatch = useAppDispatch();
-    const userPersonalInfo = useSelector(getUserPersonalInfo);
+    const userPersonalInfo = useTypedSelector(getUserPersonalInfo);
 
     return (
         <VStack>

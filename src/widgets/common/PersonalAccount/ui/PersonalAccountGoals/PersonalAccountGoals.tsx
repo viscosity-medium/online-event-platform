@@ -7,10 +7,11 @@ import {useSelector} from "react-redux";
 import {getUserPersonalGoals} from "@/widgets/common/PersonalAccount/model/PersonalAccount.selectors";
 import {UserPersonalGoals} from "@/widgets/common/PersonalAccount/model/PersonalAccount.type";
 import {personalAccountGoalsData} from "@/widgets/common/PersonalAccount/model/PersonalAccount.data";
+import {useTypedSelector} from "@/store/store";
 
 const PersonalAccountGoals = () => {
 
-    const userPersonalGoals = useSelector(getUserPersonalGoals);
+    const userPersonalGoals = useTypedSelector(getUserPersonalGoals);
 
     return (
         <VStack

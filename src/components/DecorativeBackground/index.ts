@@ -1,0 +1,1 @@
+export {DecorativeBackground} from "./ui/DecorativeBackground";

@@ -10,13 +10,13 @@ import {Image} from "@/components/Image";
 import RedCross from "@/assets/common/menu/cross.svg";
 import {useSelector} from "react-redux";
 import {getMenuIsOpen} from "@/widgets/common/SidebarMenu/model/SidebarMenu.selectors";
-import {useAppDispatch} from "@/store/store";
+import {useAppDispatch, useTypedSelector} from "@/store/store";
 import {onButtonClick} from "@/widgets/common/SidebarMenu/model/SidebarMenu.helpers";
 
 const SidebarMenu = () => {
 
     const dispatch = useAppDispatch();
-    const menuIsOpen = useSelector(getMenuIsOpen);
+    const menuIsOpen = useTypedSelector(getMenuIsOpen);
 
     return (
         <aside className={`${!menuIsOpen && cls.menuIsClosed} ${cls.sidebarMenu}`}>

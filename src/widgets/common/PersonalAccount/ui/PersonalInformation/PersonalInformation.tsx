@@ -5,11 +5,12 @@ import {EditableInfo} from "@/widgets/common/PersonalAccount/ui/PersonalInformat
 import {useSelector} from "react-redux";
 import {getPersonalAccountMode} from "@/widgets/common/PersonalAccount/model/PersonalAccount.selectors";
 import cls from "./PersonalInformation.module.scss"
+import {useTypedSelector} from "@/store/store";
 
 
 const PersonalInformation = () => {
 
-    const personalAccountMode = useSelector(getPersonalAccountMode);
+    const personalAccountMode = useTypedSelector(getPersonalAccountMode);
 
     return (
         <div

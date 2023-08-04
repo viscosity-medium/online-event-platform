@@ -8,14 +8,14 @@ import cls from "./EditableInfo.module.scss"
 import {useSelector} from "react-redux";
 import {getUserPersonalInfo} from "@/widgets/common/PersonalAccount/model/PersonalAccount.selectors";
 import {personalAccountActions} from "@/widgets/common/PersonalAccount/model/PersonalAccount.slice";
-import {useAppDispatch} from "@/store/store";
+import {useAppDispatch, useTypedSelector} from "@/store/store";
 import {UserPersonalInfo} from "@/widgets/common/PersonalAccount/model/PersonalAccount.type";
 import {personalAccountData} from "@/widgets/common/PersonalAccount/model/PersonalAccount.data";
 
 const EditableInfo = () => {
 
     const dispatch = useAppDispatch();
-    const userPersonalInfo = useSelector(getUserPersonalInfo);
+    const userPersonalInfo = useTypedSelector(getUserPersonalInfo);
 
     return (
         <VStack>
