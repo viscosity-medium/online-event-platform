@@ -1,5 +1,4 @@
 import cls from './flex.module.scss';
-import {Mods} from "@/types/commonHelpers.types";
 import {combineClassnames} from "@/helpers/helpers";
 import {FlexAlign, FlexDirection, FlexGap, FlexJustify, StackProps} from "../model/Stack.types";
 
@@ -37,6 +36,8 @@ const Flex = (props: StackProps) => {
         align = 'center',
         direction = 'row',
         gap,
+        onClick,
+        ...otherProps
     } = props;
 
     const classes = [
@@ -50,9 +51,11 @@ const Flex = (props: StackProps) => {
     return (
         <div
             ref={reference}
-            className={
-            	combineClassnames(cls.Flex, {}, classes)
-        	}
+            onClick={onClick}
+            className={ combineClassnames(cls.Flex, {}, classes) }
+            {
+                ...otherProps
+            }
         >
             {children}
         </div>

@@ -1,0 +1,32 @@
+.likesPanel {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    padding: 2px 12px;
+    background-color: var(--whiteTransperent25);
+    border: 1px white solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.7s;
+    .likesCounter {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+}
+
+.heart{
+    transition: 0.3s;
+}
+
+.red {
+    fill: #DF2D4F;
+}
+
+.white {
+    fill: rgba(255, 255, 255, 100);
+}
+
+.transparent {
+    fill: rgba(255, 255, 255, 0);
+}

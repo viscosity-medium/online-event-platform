@@ -9,20 +9,16 @@ export const sidebarMenuData = [
         link: "/#advent-calendar"
     },
     {
-        name: "Программа",
-        link: "/#schedule"
-    },
-    {
         name: "Активности",
         link: "/#activities"
     },
     {
-        name: "Конкурс ёлки",
-        link: "/#broadcast"
+        name: "Конкурс ёлки: офис",
+        link: "/gallery/christmas-tree-office"
     },
     {
-        name: "Фотогалерея",
-        link: "/#broadcast"
+        name: "Конкурс ёлки: дом",
+        link: "/gallery/christmas-tree-home"
     },
     {
         name: "Магазин подарков",

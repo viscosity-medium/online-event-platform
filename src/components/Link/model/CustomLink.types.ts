@@ -1,6 +1,6 @@
-import {ReactNode} from "react";
+import {HTMLAttributes, ReactNode} from "react";
 
-export interface CustomLinkProps {
+export interface CustomLinkProps extends HTMLAttributes<HTMLAnchorElement>{
     href: string
     children: ReactNode
     classname?: string

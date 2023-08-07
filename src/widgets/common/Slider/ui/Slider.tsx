@@ -34,7 +34,7 @@ const Slider: FC<SliderProps> = ({
         <Swiper
             ref={swiperRef}
             modules={[Pagination]}
-            className={cls.swiper}
+            className={cls.swiperContainer}
             slidesPerView={"auto"}
             spaceBetween={40}
             autoHeight={true}
@@ -57,7 +57,7 @@ const Slider: FC<SliderProps> = ({
                                 cardType={dataInfoType}
                                 giftTitle={dataInfoItem.giftTitle}
                                 giftDescription={dataInfoItem.giftDescription}
-                                imageSource={dataInfoItem.imageSource}
+                                ImageSource={dataInfoItem.ImageSource}
                                 imageAltDescription={dataInfoItem.imageAltDescription}
                                 giftPrice={dataInfoItem.giftPrice}
                                 buttonText={dataInfoItem.buttonText}

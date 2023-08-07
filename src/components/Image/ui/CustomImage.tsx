@@ -16,7 +16,8 @@ const CustomImage: FC<NextImageProps> = ({
     height = 0,
     className = "",
 	position = "relative",
-    objectFit = "cover"
+    objectFit = "cover",
+    ...otherProps
 }) => {
 
     const positionClasses: PositionClasses = {
@@ -26,12 +27,11 @@ const CustomImage: FC<NextImageProps> = ({
     const objectFitClasses: ObjectFitClasses ={
         contain: cls.objectFitContain,
         cover: cls.objectFitCover
-    }
-
+    };
     const classes = [
         positionClasses[position],
         objectFitClasses[objectFit]
-    ]
+    ];
 
 
     return (
@@ -41,6 +41,7 @@ const CustomImage: FC<NextImageProps> = ({
             width={width}
             height={height}
             className={combineClassnames(className, {}, classes)}
+            {...otherProps}
         />
     );
 };

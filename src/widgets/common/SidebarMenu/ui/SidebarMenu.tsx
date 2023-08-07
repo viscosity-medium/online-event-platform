@@ -6,9 +6,7 @@ import {Link} from "@/components/Link";
 import {sidebarMenuData} from "@/widgets/common/SidebarMenu/model/SidebarMenu.data";
 import {Button} from "@/components/Button";
 import {Text} from "@/components/Text";
-import {Image} from "@/components/Image";
 import RedCross from "@/assets/common/menu/cross.svg";
-import {useSelector} from "react-redux";
 import {getMenuIsOpen} from "@/widgets/common/SidebarMenu/model/SidebarMenu.selectors";
 import {useAppDispatch, useTypedSelector} from "@/store/store";
 import {onButtonClick} from "@/widgets/common/SidebarMenu/model/SidebarMenu.helpers";
@@ -33,8 +31,7 @@ const SidebarMenu = () => {
                 <HStack
                     align={"center"}
                 >
-                    <Image
-                        src={RedCross}
+                    <RedCross
                         alt={"close-cross-button.svg"}
                         className={cls.closeCross}
                     />

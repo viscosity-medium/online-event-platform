@@ -1,5 +1,5 @@
-import {StoreSchema} from "@/store/storeSchema";
+import {StateSchema} from "@/store/stateSchema";
 
-export const getPersonalAccountMode = (state: StoreSchema) => state.personalAccount.mode;
-export const getUserPersonalInfo = (state: StoreSchema) => state.personalAccount.userPersonalInfo;
-export const getUserPersonalGoals = (state: StoreSchema) => state.personalAccount.userPersonalGoals;
+export const getPersonalAccountMode = (state: StateSchema) => state.personalAccount.mode;
+export const getUserPersonalInfo = (state: StateSchema) => state.personalAccount.userPersonalInfo;
+export const getUserPersonalGoals = (state: StateSchema) => state.personalAccount.userPersonalGoals;

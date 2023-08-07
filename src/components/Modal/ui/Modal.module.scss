@@ -1,0 +1,14 @@
+.modalWrapper{
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    background: var(--background-gradient-transparent);
+    border: none;
+    transition: 0.5s;
+}

@@ -3,11 +3,17 @@ import {sidebarMenuReducer} from "@/widgets/common/SidebarMenu/model/SidebarMenu
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {personalAccountReducer} from "@/widgets/common/PersonalAccount/model/PersonalAccount.slice";
 import {quizReducer} from "@/widgets/common/Quiz/model/Quiz.slice";
+import {galleryReducer} from "@/widgets/common/Gallery/model/Gallery.slice";
+import {modalReducer} from "@/components/Modal/model/Modal.slice";
+import {photoSwiperReducer} from "@/widgets/common/PhotoSwiper/model/PhotoSwiper.slice";
 
 const rootReducer = combineReducers({
     sidebarMenu: sidebarMenuReducer,
     personalAccount: personalAccountReducer,
-    quiz: quizReducer
+    quiz: quizReducer,
+    gallery: galleryReducer,
+    modal: modalReducer,
+    photoSwiper: photoSwiperReducer
 })
 
 export const store = configureStore({

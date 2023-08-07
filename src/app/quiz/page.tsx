@@ -6,6 +6,7 @@ import {getQuizStaticContent} from "@/widgets/common/Quiz/model/Quiz.helpers";
 import {useSelector} from "react-redux";
 import {getQuizCurrentQuestionIndex} from "@/widgets/common/Quiz/model/Quiz.selectors";
 import {useTypedSelector} from "@/store/store";
+import {DecorativeBackground} from "@/components/DecorativeBackground";
 
 const Page = () => {
 
@@ -16,6 +17,11 @@ const Page = () => {
         <Section
             id={"quiz"}
         >
+            <DecorativeBackground
+                stripeLeft={"none"}
+                stripeRight={"christmasTreeToys2"}
+                background={"withStick"}
+            />
             <Quiz
                 quizContentItem={
                     quizContent[quizCurrentQuestionIndex]

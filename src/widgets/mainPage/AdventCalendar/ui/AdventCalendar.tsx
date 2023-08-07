@@ -54,7 +54,7 @@ const AdventCalendar = () => {
                         key={`${itemNumber}-${itemType}`}
                         itemType={itemType}
                         itemNumber={itemNumber}
-                        imageSource={imageSource}
+                        ImageSource={imageSource}
                     />
                 )
             }

@@ -12,7 +12,7 @@ const SlideCard: FC<SlideCardProps> = ({
     cardType,
     giftTitle,
     giftDescription,
-    imageSource,
+    ImageSource,
     imageAltDescription,
     giftPrice,
     hrefLink,
@@ -41,7 +41,7 @@ const SlideCard: FC<SlideCardProps> = ({
     const extraClass = {
         unavailableCard: cls.unavailableCard,
         none: ""
-    }
+    };
 
     return (
         <VStack
@@ -53,11 +53,19 @@ const SlideCard: FC<SlideCardProps> = ({
                 align={"center"}
             >
                 <HStack>
-                    <Image
-                        className={cls.cardImage}
-                        src={imageSource}
-                        alt={imageAltDescription}
-                    />
+                    {
+                        typeof ImageSource === "object" ? (
+                            <Image
+                                className={cls.cardImage}
+                                src={ImageSource}
+                                alt={imageAltDescription}
+                            />
+                        ) : (
+                            <ImageSource/>
+                        )
+                    }
+
+                    {/*<ImageSource/>*/}
                 </HStack>
                 <Text
                     tag={"h3"}

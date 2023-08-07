@@ -6,29 +6,32 @@ import {HStack, VStack} from "@/components/Stack";
 import cls from "./page.module.scss"
 import {Button} from "@/components/Button";
 import {Text} from "@/components/Text";
-import {Instruction} from "@/widgets/common/Broadcast/ui/Instruction/Instruction";
 import {useState} from "react";
+import backgroundImage from "@/assets/common/decorativeBackground/stars-without-stick.svg"
+import {Instruction} from "@/components/Instruction";
 
-const Page = () => {
+const MinecraftPage = () => {
 
     const [instructionIsShown, setInstructionIsShown] = useState<boolean>(false);
 
     const onConnectionButtonClick = () => {
 
     };
+
     const onInstructionButtonClick = () => {
         setInstructionIsShown(true);
     };
 
     const onCloseInstructionButtonClick = () => {
         setInstructionIsShown(false);
-    }
+    };
 
     return (
         <>
             <DecorativeBackground
-                stripeLeft={"christmasTreeToys"}
+                stripeLeft={"christmasTreeToys1"}
                 stripeRight={"christmasMagicThings"}
+                background={"withoutStick"}
             />
             <VStack
                 className={cls.broadcastWrapper}
@@ -39,18 +42,20 @@ const Page = () => {
                     textAlign={"start"}
                     instructionIsShown={instructionIsShown}
                     embeddedFrameSrc={"https://www.youtube.com/embed/vtnFgiiSdaE"}
-                    internalContent={(
-                        <Instruction
-                            onCloseInstructionButtonClick={onCloseInstructionButtonClick}
-                        />
-                    )}
-                />
+                >
+                    <Instruction
+                        buttonSize={"medium"}
+                        buttonBackgroundColor={"secondary"}
+                        instructionType={"minecraftInstruction"}
+                        onCloseInstructionHandler={onCloseInstructionButtonClick}
+                    />
+                </Broadcast>
                 <HStack
                     justify={"between"}
                     className={cls.buttonWrapper}
                 >
                     <Button
-                        size={"standard"}
+                        size={"medium"}
                         backgroundColor={"secondary"}
                         onClick={onConnectionButtonClick}
                     >
@@ -62,7 +67,7 @@ const Page = () => {
                         </Text>
                     </Button>
                     <Button
-                        size={"standard"}
+                        size={"medium"}
                         backgroundColor={"main"}
                         onClick={onInstructionButtonClick}
                     >
@@ -80,4 +85,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default MinecraftPage;

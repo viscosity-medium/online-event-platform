@@ -7,7 +7,7 @@ export interface SlideCardProps {
     giftDescription: string
     buttonText: string
     hrefLink: string
-    imageSource: string | StaticImageData
+    ImageSource: string | StaticImageData
     imageAltDescription: string
     giftPrice?: number
     buttonTextAlt?: string

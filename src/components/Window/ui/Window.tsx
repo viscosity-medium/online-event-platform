@@ -7,6 +7,7 @@ const Window: FC<WindowProps> = ({
     children,
     classname
 }) => {
+
     return (
         <VStack
             className={
@@ -19,6 +20,7 @@ const Window: FC<WindowProps> = ({
             }
         </VStack>
     );
+
 };
 
 export {Window};

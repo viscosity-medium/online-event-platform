@@ -1,14 +1,14 @@
-import ChristmasTreeToys from "@/assets/common/decorativeBackground/decorativeStripeTreeToys.png";
-import ChristmasMagicThings from "@/assets/common/decorativeBackground/decorativeStripeMagicThings.png";
 import cls from "../ui/DecorativeBackground.module.scss";
+import BackgroundWithStick from "@/assets/common/decorativeBackground/stars-with-stick.svg";
+import BackgroundWithoutStick from "@/assets/common/decorativeBackground/stars-without-stick.svg";
 
 import {
-    DecorativeBackgroundProps,
+    Background,
+    GetDecorativeBackgroundContent,
     StripeContent
 } from "@/components/DecorativeBackground/model/DecorativeBackground.types";
-import Image from "next/image";
 
-const getSingleContent = ({stripeContent, className}:
+const getSingleSideContent = ({stripeContent, className}:
 {
     stripeContent: StripeContent,
     className: string
@@ -16,37 +16,58 @@ const getSingleContent = ({stripeContent, className}:
     switch(stripeContent) {
         case "none":
             return <></>;
-        case "christmasTreeToys":
-            return <Image
-                src={ChristmasTreeToys}
-                alt={"decorativeStripeTreeToys.png"}
-                className={className}
-            />
+        case "christmasTreeToys1":
+            return <div className={`${cls.christmasTreeToys1} ${className}`}/>
+        case "christmasTreeToys2":
+            return <div className={`${cls.christmasTreeToys2} ${className}`}/>
         case "christmasMagicThings":
-            return <Image
-                src={ChristmasMagicThings}
-                alt={"decorativeStripeMagicThings.png"}
-                className={className}
-            />
+            return <div className={`${cls.magicThings} ${className}`}/>
+        default:
+            return <></>;
     }
+};
+
+const getSingleBackgroundContent = ({backgroundContent, className}: {backgroundContent: Background, className: string}) => {
+
+    switch(backgroundContent){
+        case "none": {
+            return <></>;
+        }
+        case "withStick":{
+            return <BackgroundWithStick className={className}/>;
+        }
+        case "withoutStick":{
+            return <BackgroundWithoutStick  className={className}/>;
+        }
+        default: {
+            return <></>
+        }
+    }
+
 };
 
 export const getDecorativeBackgroundContent = ({
     stripeLeft,
-    stripeRight
-}: DecorativeBackgroundProps) => {
+    stripeRight,
+    background
+}: GetDecorativeBackgroundContent) => {
 
-    const leftContent = getSingleContent({
+    const leftContent = getSingleSideContent({
         stripeContent: stripeLeft,
         className: `${cls.decorativeElement} ${cls.decorativeLeftElement}`
     });
-    const rightContent = getSingleContent({
+    const rightContent = getSingleSideContent({
         stripeContent: stripeRight,
         className: `${cls.decorativeElement} ${cls.decorativeRightElement}`
+    });
+    const backgroundContent = getSingleBackgroundContent({
+        backgroundContent: background,
+        className: `${cls.decorativeBackground}`
     });
 
     return {
         leftContent,
-        rightContent
+        rightContent,
+        backgroundContent
     }
 };

@@ -11,6 +11,8 @@ import {personalAccountActions} from "@/widgets/common/PersonalAccount/model/Per
 import {useAppDispatch, useTypedSelector} from "@/store/store";
 import {UserPersonalInfo} from "@/widgets/common/PersonalAccount/model/PersonalAccount.type";
 import {personalAccountData} from "@/widgets/common/PersonalAccount/model/PersonalAccount.data";
+import {UnorderedList} from "@/components/UnorderedList";
+import {ListElement} from "@/components/UnorderedList/ListElement/ui/ListElement";
 
 const EditableInfo = () => {
 
@@ -18,22 +20,26 @@ const EditableInfo = () => {
     const userPersonalInfo = useTypedSelector(getUserPersonalInfo);
 
     return (
-        <VStack>
+        <UnorderedList>
             {
                 Object.entries(userPersonalInfo).map(([key, value], index) => {
                     return (
-                        <Input
+                        <ListElement
                             key={`${key}__${index}`}
-                            className={cls.personalInfoItem}
-                            onChange={(e) => {
-                                dispatch(personalAccountActions.setUserPersonalInfo({
-                                    ...userPersonalInfo,
-                                    [key]: e.target.value
-                                }));
-                            }}
-                            value={value || ""}
-                            placeholder={personalAccountData[key as keyof  UserPersonalInfo]}
-                        />
+
+                        >
+                            <Input
+                                className={cls.personalInfoItem}
+                                onChange={(e) => {
+                                    dispatch(personalAccountActions.setUserPersonalInfo({
+                                        ...userPersonalInfo,
+                                        [key]: e.target.value
+                                    }));
+                                }}
+                                value={value || ""}
+                                placeholder={personalAccountData[key as keyof  UserPersonalInfo]}
+                            />
+                        </ListElement>
                     );
                 })
             }
@@ -58,7 +64,7 @@ const EditableInfo = () => {
                     />
                 </HStack>
             </Button>
-        </VStack>
+        </UnorderedList>
     );
 
 };

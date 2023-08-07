@@ -7,13 +7,13 @@ const CustomLink: FC<CustomLinkProps> = ({
     href,
     children,
     classname,
-    onClick
+    ...props
 }) => {
     return (
         <Link
             href={href}
             className={`${cls.link} ${classname}`}
-            onClick={onClick}
+            {...props}
         >
             {
                 children

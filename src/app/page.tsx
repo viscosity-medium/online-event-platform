@@ -1,3 +1,5 @@
+'use client'
+
 import {Promo} from "@/widgets/common/Promo";
 import {Broadcast} from "../widgets/common/Broadcast";
 import {AdventCalendar} from "@/widgets/mainPage/AdventCalendar";

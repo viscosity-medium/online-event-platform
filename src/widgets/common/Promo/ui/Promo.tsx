@@ -1,5 +1,4 @@
 import {HStack, VStack} from "@/components/Stack";
-import {Image} from "@/components/Image";
 import Promo_ru from "@/assets/common/happy_new_year_ru.svg";
 import {Section} from "@/components/Section";
 import {Button} from "@/components/Button";
@@ -13,10 +12,7 @@ const Promo = () => {
         	className={cls.promoSection}
         >
             <VStack>
-                <Image
-                    src={Promo_ru}
-                    position={"absolute"}
-                    objectFit={"contain"}
+                <Promo_ru
                     className={cls.promoImage}
                     alt={"Happy New Year (Russian Language)"}
                 />

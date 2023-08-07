@@ -1,3 +1,3 @@
-import {StoreSchema} from "@/store/storeSchema";
+import {StateSchema} from "@/store/stateSchema";
 
-export const getMenuIsOpen = (state: StoreSchema) => state.sidebarMenu.menuIsOpen;
+export const getMenuIsOpen = (state: StateSchema) => state.sidebarMenu.menuIsOpen;

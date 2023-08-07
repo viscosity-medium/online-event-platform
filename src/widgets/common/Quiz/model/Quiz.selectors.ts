@@ -1,4 +1,4 @@
-import {StoreSchema} from "@/store/storeSchema";
+import {StateSchema} from "@/store/stateSchema";
 
-export const getQuizCurrentQuestionIndex = (state: StoreSchema) => state.quiz.currentQuestionIndex;
-export const getUserQuizScore = (state: StoreSchema) => state.quiz.userScore;
+export const getQuizCurrentQuestionIndex = (state: StateSchema) => state.quiz.currentQuestionIndex;
+export const getUserQuizScore = (state: StateSchema) => state.quiz.userScore;

@@ -7,9 +7,9 @@ const Broadcast: FC<BroadcastProps> = ({
 	hTagText,
 	decorativeColors,
     textAlign = "center",
-    internalContent,
     instructionIsShown,
-    embeddedFrameSrc
+    embeddedFrameSrc,
+    children
 }) => {
     return (
         <Section
@@ -32,7 +32,7 @@ const Broadcast: FC<BroadcastProps> = ({
                         embeddedFrameSrc={embeddedFrameSrc}
                     >
                         {
-                            instructionIsShown && internalContent
+                            instructionIsShown && children
                         }
                     </BroadcastFrame>
                 </BroadcastFrame>

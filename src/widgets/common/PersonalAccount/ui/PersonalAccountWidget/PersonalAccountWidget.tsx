@@ -6,7 +6,6 @@ import {Text} from "@/components/Text";
 import cls from "./PersonalAccountWidget.module.scss";
 import {Button} from "@/components/Button";
 import BurgerMenuIcon from "@/assets/common/menu/burger-menu-icon.svg"
-import {Image} from "@/components/Image";
 import {onButtonClick} from "@/widgets/common/SidebarMenu/model/SidebarMenu.helpers";
 import {useAppDispatch} from "@/store/store";
 import Link from "next/link";
@@ -15,7 +14,7 @@ import {useRef} from "react";
 const PersonalAccountWidget = () => {
 
     const dispatch = useAppDispatch();
-    const linkRef = useRef<HTMLAnchorElement>(null)
+    const linkRef = useRef<HTMLAnchorElement>(null);
 
     return (
         <HStack
@@ -65,10 +64,7 @@ const PersonalAccountWidget = () => {
                     });
                 }}
             >
-                <Image
-                    src={BurgerMenuIcon}
-                    alt={"burger-menu-icon.svg"}
-                />
+                <BurgerMenuIcon/>
             </Button>
         </HStack>
     );

@@ -1,7 +1,6 @@
 'use client';
 
 import {Button} from "@/components/Button";
-import {Image} from "@/components/Image";
 import DartBoard from "@/assets/mainPage/schedule/dartBoard.svg"
 import cls from "./DropDown.module.scss";
 import {HStack, VStack} from "@/components/Stack";
@@ -11,6 +10,7 @@ import {useResizeWindow} from "@/hooks/hooks";
 import {resizeDropDownItem} from "@/components/DropDownMenu/model/DropDownMenu.helpers";
 import {Div} from "@/components/Div";
 import {DropDownItemProps} from "@/components/DropDownMenu/model/DropDownMenu.types";
+import {ListElement} from "@/components/UnorderedList/ListElement/ui/ListElement";
 
 const DropDownItem: FC<DropDownItemProps> = ({
     title,
@@ -35,8 +35,8 @@ const DropDownItem: FC<DropDownItemProps> = ({
    });
 
     return (
-        <li
-            ref={listItemRef}
+        <ListElement
+            reference={listItemRef}
             className={`${
             cls.dropDownItemUnOrderListItem
         }`}>
@@ -51,8 +51,7 @@ const DropDownItem: FC<DropDownItemProps> = ({
                     }}
                 >
                     <HStack>
-                        <Image
-                            src={DartBoard}
+                        <DartBoard
                             alt={"dart-board.svg"}
                         />
                         <Text
@@ -62,7 +61,6 @@ const DropDownItem: FC<DropDownItemProps> = ({
                             {title}
                         </Text>
                     </HStack>
-
                 </Button>
                 <Div
                     className={cls.dropDownItemOuterTextWrapper}
@@ -94,7 +92,7 @@ const DropDownItem: FC<DropDownItemProps> = ({
                     />
                 </Div>
             </VStack>
-        </li>
+        </ListElement>
     );
 };
 

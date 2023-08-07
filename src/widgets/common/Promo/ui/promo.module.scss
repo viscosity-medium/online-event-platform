@@ -3,8 +3,10 @@
 };
 
 .promoImage {
+    position: absolute;
     top: 0;
     width: 100%;
+    object-fit: contain;
     object-position: 50% 0;
 };
 

@@ -1,22 +1,46 @@
 .decorativeBackground {
+    width: auto;
     position: absolute;
+    object-fit: contain;
+    height: 100%;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
     min-height: 100vh;
     z-index: -1;
 }
 
+.pageDecoration{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
 .decorativeElement{
     height: 100%;
     width: 144px;
+
+}
+
+.christmasTreeToys1{
+    background-image: url("../../../assets/common/decorativeBackground/decorativeStripeTreeToys1.png");
+}
+
+.christmasTreeToys2{
+    background-image: url("../../../assets/common/decorativeBackground/decorativeStripeTreeToys2.png");
+}
+
+.magicThings {
+    background-image: url("../../../assets/common/decorativeBackground/decorativeStripeMagicThings.png");
 }
 
 .decorativeLeftElement {
+    position: absolute;
+    background-repeat: repeat;
     left: 0;
 }
 
 .decorativeRightElement {
+    position: absolute;
     right: 0;
 }

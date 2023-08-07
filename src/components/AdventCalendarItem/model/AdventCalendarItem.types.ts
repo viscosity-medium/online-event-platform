@@ -1,4 +1,4 @@
-import {RefObject} from "react";
+import {ReactNode, RefObject} from "react";
 
 export type AdventCalendarItemType = "singleItemFilled" | "singleItemEmpty" | "doubleItemHorizontal" | "doubleItemVertical";
 export interface AdventCalendarItemProps {
@@ -6,7 +6,7 @@ export interface AdventCalendarItemProps {
     itemNumber: number
     gridColumn?: number
     gridRowStart?: number
-    imageSource?: string
+    ImageSource: ReactNode
     className?: string
 }
 
@@ -18,5 +18,5 @@ export interface GetAdventCalendarItemHeight {
 export type AdventCalendarItemsData = {
     itemType: AdventCalendarItemType,
     itemNumber: number
-    imageSource: string
+    imageSource: ReactNode
 }[]

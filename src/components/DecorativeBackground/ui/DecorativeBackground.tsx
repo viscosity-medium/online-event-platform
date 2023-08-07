@@ -1,24 +1,24 @@
 import {HStack} from "@/components/Stack";
 import {FC} from "react";
-import {DecorativeBackgroundProps} from "../model/DecorativeBackground.types";
+import {GetDecorativeBackgroundContent} from "../model/DecorativeBackground.types";
 import cls from "./DecorativeBackground.module.scss"
-import { getDecorativeBackgroundContent } from "../model/DecorativeBackground.helpers";
+import {getDecorativeBackgroundContent} from "../model/DecorativeBackground.helpers";
 
-
-const DecorativeBackground: FC<DecorativeBackgroundProps> = ({
+const DecorativeBackground: FC<GetDecorativeBackgroundContent> = ({
     stripeLeft = "none",
-    stripeRight = "none"
+    stripeRight = "none",
+    background = "none"
 }) => {
 
-    const {leftContent, rightContent} = getDecorativeBackgroundContent({ stripeLeft, stripeRight });
+    const {leftContent, rightContent, backgroundContent} = getDecorativeBackgroundContent({ stripeLeft, stripeRight, background: background });
 
     return (
         <HStack
-            justify={"between"}
             className={cls.decorativeBackground}
         >
-            {leftContent}
-            {rightContent}
+            {leftContent && leftContent}
+            {rightContent && rightContent}
+            {backgroundContent}
         </HStack>
     );
 };

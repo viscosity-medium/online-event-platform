@@ -7,11 +7,18 @@ import {Image} from "@/components/Image";
 import {Gifts} from "@/widgets/common/Gifts";
 import {PersonalAccount} from "@/widgets/common/PersonalAccount";
 import MagicBall from "@/assets/common/personal-account/magic-ball.svg";
+import GalleryBackground from "@/assets/common/decorativeBackground/stars-without-stick.svg";
+import {DecorativeBackground} from "@/components/DecorativeBackground";
 
 const Page = () => {
 
     return (
         <>
+            <DecorativeBackground
+                stripeLeft={"none"}
+                stripeRight={"christmasTreeToys2"}
+                background={"withStick"}
+            />
             <Image
                 src={BigLogo}
                 alt={"logo-big.svg"}
@@ -25,8 +32,7 @@ const Page = () => {
                 <PersonalAccount/>
                 <Gifts/>
             </VStack>
-            <Image
-                src={MagicBall}
+            <MagicBall
                 alt={"magic-ball.svg"}
                 className={cls.magicBall}
                 position={"absolute"}
