@@ -29,121 +29,121 @@ export const adventCalendarItemsData: AdventCalendarItemsData = [
     {
         itemType: "singleItemFilled",
         itemNumber: 1,
-        imageSource: Image1
+        imageSource: <Image1/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 2,
-        imageSource: Image2
+        imageSource: <Image2/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 3,
-        imageSource: Image3
+        imageSource: <Image3/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 4,
-        imageSource: Image4
+        imageSource: <Image4/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 5,
-        imageSource: Image5
+        imageSource: <Image5/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 6,
-        imageSource: Image6
+        imageSource: <Image6/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 7,
-        imageSource: Image7
+        imageSource: <Image7/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 8,
-        imageSource: Image8
+        imageSource: <Image8/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 9,
-        imageSource: Image9
+        imageSource: <Image9/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 10,
-        imageSource: Image10
+        imageSource: <Image10/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 11,
-        imageSource: Image11
+        imageSource: <Image11/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 12,
-        imageSource: Image12
+        imageSource: <Image12/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 13,
-        imageSource: Image13
+        imageSource: <Image13/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 14,
-        imageSource: Image14
+        imageSource: <Image14/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 15,
-        imageSource: Image15
+        imageSource: <Image15/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 16,
-        imageSource: Image16
+        imageSource: <Image16/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 17,
-        imageSource: Image17
+        imageSource: <Image17/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 18,
-        imageSource: Image18
+        imageSource: <Image18/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 24,
-        imageSource: Image24
+        imageSource: <Image24/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 19,
-        imageSource: Image19
+        imageSource: <Image19/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 20,
-        imageSource: Image20
+        imageSource: <Image20/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 21,
-        imageSource: Image21
+        imageSource: <Image21/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 22,
-        imageSource: Image22
+        imageSource: <Image22/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 23,
-        imageSource: Image23
+        imageSource: <Image23/>
     },
 ]

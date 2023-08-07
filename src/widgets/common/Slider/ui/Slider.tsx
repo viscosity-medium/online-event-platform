@@ -24,7 +24,8 @@ const Slider: FC<SliderProps> = ({
         callback: () => {
             resizeSliderSize({
                 swiperRef,
-                setSwiperWidth
+                setSwiperWidth,
+                length: slidersData[dataInfoType].length
             })
         },
         dependencies: [swiperRef.current]

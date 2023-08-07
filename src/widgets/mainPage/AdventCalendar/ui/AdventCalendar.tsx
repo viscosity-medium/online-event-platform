@@ -42,11 +42,6 @@ const AdventCalendar = () => {
 		<div
             className={cls.gridContainer}
             ref={gridContainerRef}
-            // style={{
-            //     display: "grid",
-            //     gridTemplateColumns: `repeat(${amountOfElementsInRow}, ${itemDimensionSize}px)`,
-            //     gap: `${itemGap}px`
-            // }}
         >
             {
                 adventCalendarItemsData.map(({itemType, itemNumber, imageSource}) =>
@@ -54,7 +49,7 @@ const AdventCalendar = () => {
                         key={`${itemNumber}-${itemType}`}
                         itemType={itemType}
                         itemNumber={itemNumber}
-                        ImageSource={imageSource}
+                        imageSource={imageSource}
                     />
                 )
             }

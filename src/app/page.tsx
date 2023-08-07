@@ -8,20 +8,42 @@ import {Faq} from "@/widgets/common/Faq";
 import {VStack} from "@/components/Stack";
 import cls from "./page.module.scss"
 import {Gifts} from "@/widgets/common/Gifts";
+import StarsDecoration from "@/assets/common/decorativeBackground/stars-without-stick.svg"
 
 const Page = () => {
+
+    const generateDecorationContent = () => {
+        const arr = [];
+
+        for(let index = 0;index < 6;index++){
+            arr.push(
+                <StarsDecoration
+                    className={cls.starsDecorationItem}
+                />
+            )
+        }
+
+        return arr
+
+    }
     
     return (
         <>
             <Promo/>
-            <VStack className={cls.MainContentWrapper}>
+            <VStack
+                className={cls.mainContentWrapper}
+            >
+                <VStack className={cls.starsDecoration}>
+                    {
+                        ...generateDecorationContent()
+                    }
+                </VStack>
                 <Broadcast
                 	hTagText={"Трансляция"}
                     decorativeColors={["outer", "middle", "inner"]}
                     embeddedFrameSrc={"https://www.youtube.com/embed/doO5R2xZMFI"}
                 />
                 <AdventCalendar/>
-                {/*<Schedule/>*/}
                 <Activities/>
                 <Gifts/>
                 <Faq/>

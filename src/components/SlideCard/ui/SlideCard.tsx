@@ -43,6 +43,7 @@ const SlideCard: FC<SlideCardProps> = ({
         none: ""
     };
 
+
     return (
         <VStack
             className={`${cls.slideCard} ${cardClass[cardType]} ${extraClass[extraButtonClass]}`}
@@ -54,7 +55,7 @@ const SlideCard: FC<SlideCardProps> = ({
             >
                 <HStack>
                     {
-                        typeof ImageSource === "object" ? (
+                        ImageSource?.src ? (
                             <Image
                                 className={cls.cardImage}
                                 src={ImageSource}
@@ -65,7 +66,7 @@ const SlideCard: FC<SlideCardProps> = ({
                         )
                     }
 
-                    {/*<ImageSource/>*/}
+                    {/*<imageSource/>*/}
                 </HStack>
                 <Text
                     tag={"h3"}

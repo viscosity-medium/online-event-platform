@@ -5,12 +5,16 @@ import {SwiperRef} from "swiper/react";
 export interface ResizeSliderSize {
     setSwiperWidth: Dispatch<SetStateAction<number | undefined>>
     swiperRef: RefObject<SwiperRef>
+    length: number
 }
 
 export const resizeSliderSize = ({
     setSwiperWidth,
-    swiperRef
+    swiperRef,
+    length
 }: ResizeSliderSize) => {
+
+
 
     // @ts-ignore
     const swiperNodeStyle: CSSStyleDeclaration = window.getComputedStyle(swiperRef.current);
@@ -25,9 +29,10 @@ export const resizeSliderSize = ({
     const slidCardMarginValue = +slidCardNodeStyle.getPropertyValue('margin-right').replace(/px/,"");
 
     const cardSizeWithMargin = (slidCardWidthValue + slidCardMarginValue);
-    const cardsInSwiper = Math.floor((swiperWidthValue + swiperMarginValue) / cardSizeWithMargin)
-    const swiperWidthToSet = (cardsInSwiper !== 0 ? cardsInSwiper : 1)  * cardSizeWithMargin + swiperPaddingValue;
-
+    const cardsInSwiper = Math.floor((swiperWidthValue + swiperMarginValue) / cardSizeWithMargin);
+    const argument = cardsInSwiper <= length ? cardsInSwiper : length
+    const swiperWidthToSet = (cardsInSwiper !== 0 ? argument : 1)  * cardSizeWithMargin + swiperPaddingValue;
+    console.log(swiperWidthToSet)
     setSwiperWidth(swiperWidthToSet);
 
 }

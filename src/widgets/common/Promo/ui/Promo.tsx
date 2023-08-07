@@ -1,11 +1,10 @@
 import {HStack, VStack} from "@/components/Stack";
-import Promo_ru from "@/assets/common/promo-decor.svg";
 import PromoOrnament from "@/assets/common/promo-ornament.svg";
 import {Section} from "@/components/Section";
 import {Button} from "@/components/Button";
 import {Text} from "@/components/Text";
 import cls from "./promo.module.scss";
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {PromoDecorations} from "@/widgets/common/Promo/ui/PromoDecorations";
 import {useResizeWindow} from "@/hooks/hooks";
 

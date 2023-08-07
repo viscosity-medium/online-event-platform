@@ -16,12 +16,12 @@ import {Image} from "@/components/Image";
 const AdventCalendarItem: FC<AdventCalendarItemProps> = ({
 	itemType,
     itemNumber,
-    ImageSource,
+    imageSource,
 	className = ""
 }) => {
 
     const itemRef = useRef<HTMLButtonElement>(null);
-    const {itemWidth, itemHeight} = getAdventCalendarItemHeight({itemRef, itemType})
+    const {itemHeight} = getAdventCalendarItemHeight({itemRef, itemType})
     const itemTypeClass = getAdventCalendarItemTypeClasses({itemType})
     const itemNumberClass = getAdventCalendarItemNumberClass({itemNumber});
     const classes = `${ itemTypeClass } ${ itemNumberClass } ${className}`;
@@ -34,8 +34,8 @@ const AdventCalendarItem: FC<AdventCalendarItemProps> = ({
 				height: `${itemHeight}px`
             }}
         >
-            {// @ts-ignore
-                <ImageSource/>
+            {
+                imageSource
             }
         </Button>
     );

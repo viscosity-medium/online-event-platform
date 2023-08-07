@@ -6,7 +6,7 @@ export interface AdventCalendarItemProps {
     itemNumber: number
     gridColumn?: number
     gridRowStart?: number
-    ImageSource: ReactNode
+    imageSource: ReactNode
     className?: string
 }
 
