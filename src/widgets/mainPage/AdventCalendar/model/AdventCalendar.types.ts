@@ -1,4 +1,6 @@
 import {Dispatch, RefObject, SetStateAction} from "react";
+import adventCalendarTask1 from "@/assets/mainPage/adventCalendar/advent-calendar-task-1.png";
+import {StaticImageData} from "next/image";
 
 export interface ResizeGridProperties {
     itemGap: number
@@ -8,4 +10,9 @@ export interface ResizeGridProperties {
     setRowLinesNumber: Dispatch<SetStateAction<number>>
     setColumnLinesNumber: Dispatch<SetStateAction<number>>
     setAmountOfElementsInRow: Dispatch<SetStateAction<number>>
+}
+
+export interface AdventContentItem{
+    task: string,
+    img?: StaticImageData
 }

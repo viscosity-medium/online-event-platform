@@ -1,17 +1,15 @@
 "use client"
 
-import {FC, ReactNode, useRef} from 'react';
+import {FC, useRef} from 'react';
 import {Button} from "@/components/Button";
-import cls from "./AdventCalendarItem.module.scss";
-import {
-    AdventCalendarItemProps,
-    AdventCalendarItemType
-} from "@/components/AdventCalendarItem/model/AdventCalendarItem.types";
+import {AdventCalendarItemProps} from "@/components/AdventCalendarItem/model/AdventCalendarItem.types";
 import {
     getAdventCalendarItemHeight,
-    getAdventCalendarItemNumberClass, getAdventCalendarItemTypeClasses
+    getAdventCalendarItemNumberClass,
+    getAdventCalendarItemTypeClasses
 } from "@/components/AdventCalendarItem/model/AdventCalendarItem.helpers";
-import {Image} from "@/components/Image";
+import {useAppDispatch} from "@/store/store";
+import {modalActions} from "@/components/Modal/model/Modal.slice";
 
 const AdventCalendarItem: FC<AdventCalendarItemProps> = ({
 	itemType,
@@ -20,19 +18,27 @@ const AdventCalendarItem: FC<AdventCalendarItemProps> = ({
 	className = ""
 }) => {
 
+    const dispatch = useAppDispatch();
     const itemRef = useRef<HTMLButtonElement>(null);
     const {itemHeight} = getAdventCalendarItemHeight({itemRef, itemType})
     const itemTypeClass = getAdventCalendarItemTypeClasses({itemType})
     const itemNumberClass = getAdventCalendarItemNumberClass({itemNumber});
     const classes = `${ itemTypeClass } ${ itemNumberClass } ${className}`;
 
+    const onButtonCLick = () => {
+        dispatch(modalActions.setModalIsShown(true));
+    };
+
+    const style = itemHeight ? {
+        height: `${itemHeight}px`
+    } : {}
+
     return (
         <Button
             className={classes}
 			reference={itemRef}
-            style={{
-				height: `${itemHeight}px`
-            }}
+            style={style}
+            onClick={onButtonCLick}
         >
             {
                 imageSource

@@ -1,5 +1,5 @@
 import {AdventCalendarItemsData} from "@/components/AdventCalendarItem/model/AdventCalendarItem.types";
-
+import cls from "../ui/AdventCalendarItem.module.scss";
 import Image1 from "@/assets/mainPage/adventCalendar/1.svg";
 import Image2 from "@/assets/mainPage/adventCalendar/2.svg";
 import Image3 from "@/assets/mainPage/adventCalendar/3.svg";
@@ -29,121 +29,121 @@ export const adventCalendarItemsData: AdventCalendarItemsData = [
     {
         itemType: "singleItemFilled",
         itemNumber: 1,
-        imageSource: <Image1/>
+        imageSource: <Image1 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 2,
-        imageSource: <Image2/>
+        imageSource: <Image2 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 3,
-        imageSource: <Image3/>
+        imageSource: <Image3 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 4,
-        imageSource: <Image4/>
+        imageSource: <Image4 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 5,
-        imageSource: <Image5/>
+        imageSource: <Image5 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 6,
-        imageSource: <Image6/>
+        imageSource: <Image6 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 7,
-        imageSource: <Image7/>
+        imageSource: <Image7 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 8,
-        imageSource: <Image8/>
+        imageSource: <Image8 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 9,
-        imageSource: <Image9/>
+        imageSource: <Image9 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 10,
-        imageSource: <Image10/>
+        imageSource: <Image10 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 11,
-        imageSource: <Image11/>
+        imageSource: <Image11 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 12,
-        imageSource: <Image12/>
+        imageSource: <Image12 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 13,
-        imageSource: <Image13/>
+        imageSource: <Image13 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 14,
-        imageSource: <Image14/>
+        imageSource: <Image14 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 15,
-        imageSource: <Image15/>
+        imageSource: <Image15 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 16,
-        imageSource: <Image16/>
+        imageSource: <Image16 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 17,
-        imageSource: <Image17/>
+        imageSource: <Image17 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 18,
-        imageSource: <Image18/>
+        imageSource: <Image18 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemVertical",
         itemNumber: 24,
-        imageSource: <Image24/>
+        imageSource: <Image24 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 19,
-        imageSource: <Image19/>
+        imageSource: <Image19 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 20,
-        imageSource: <Image20/>
+        imageSource: <Image20 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 21,
-        imageSource: <Image21/>
+        imageSource: <Image21 className={cls.adventItemSource}/>
     },
     {
         itemType: "doubleItemHorizontal",
         itemNumber: 22,
-        imageSource: <Image22/>
+        imageSource: <Image22 className={cls.adventItemSource}/>
     },
     {
         itemType: "singleItemFilled",
         itemNumber: 23,
-        imageSource: <Image23/>
+        imageSource: <Image23 className={cls.adventItemSource}/>
     },
 ]
