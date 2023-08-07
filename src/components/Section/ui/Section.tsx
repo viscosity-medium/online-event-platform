@@ -10,7 +10,8 @@ const Section: FC<SectionProps> = ({
     hTagText,
     id,
     className = "",
-    textAlign = "center"
+    textAlign = "center",
+    ...otherProps
 }) => {
 
     const textAlignClass: Record<TextAlign, string> = {
@@ -30,6 +31,7 @@ const Section: FC<SectionProps> = ({
         <section
             id={id}
             className={combineClassnames(className, {}, additionalClasses)}
+            {...otherProps}
         >
             {
                 hTag && defineTextTag({

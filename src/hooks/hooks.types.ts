@@ -1,5 +1,5 @@
 
 export interface UseResizeWindowProps {
-    functionToExecute: () => void
+    callback: () => void
     dependencies?: any[]
 }

@@ -1,22 +1,64 @@
 import {HStack, VStack} from "@/components/Stack";
-import Promo_ru from "@/assets/common/happy_new_year_ru.svg";
+import Promo_ru from "@/assets/common/promo-decor.svg";
+import PromoOrnament from "@/assets/common/promo-ornament.svg";
 import {Section} from "@/components/Section";
 import {Button} from "@/components/Button";
 import {Text} from "@/components/Text";
 import cls from "./promo.module.scss";
+import {useEffect, useRef, useState} from "react";
+import {PromoDecorations} from "@/widgets/common/Promo/ui/PromoDecorations";
+import {useResizeWindow} from "@/hooks/hooks";
+
+export interface PromoResolution {
+    width: number | undefined,
+    height: number | undefined
+}
 
 const Promo = () => {
+
+    const promoImageRef = useRef<SVGSVGElement>(null);
+    const [promoResolution,setPromoResolution] = useState<PromoResolution>({
+        width: undefined,
+        height: undefined
+    });
+
+    useResizeWindow({callback: ()=> {
+
+        if(promoImageRef.current){
+            setPromoResolution(prevState => ({
+                width: promoImageRef.current!.clientWidth,
+                height: promoImageRef.current!.clientHeight
+            }))
+        }
+
+    },});
+
+    const style = promoResolution.height ? {
+        width: "100%",
+        height: promoResolution.height
+    } : {
+        width: "100%",
+        height: "56.1vw"
+    };
+
+
     return (
         <Section
             id={"promo"}
         	className={cls.promoSection}
+            style={style}
         >
             <VStack>
-                <Promo_ru
+                <PromoDecorations
+                    reference={promoImageRef}
                     className={cls.promoImage}
-                    alt={"Happy New Year (Russian Language)"}
                 />
-                <VStack className={cls.contentGroup}>
+                <PromoOrnament
+                    className={cls.promoOrnament}
+                />
+                <VStack
+                    className={cls.contentGroup}
+                >
                     <Text
                         tag={"h1"}
                         align={"left"}

@@ -30,7 +30,7 @@ const AdventCalendar = () => {
     };
 
     useResizeWindow({
-        functionToExecute: () => resizeGrid(resizeGridProperties)
+        callback: () => resizeGrid(resizeGridProperties)
     });
 
     return (

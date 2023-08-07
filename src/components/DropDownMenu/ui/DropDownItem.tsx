@@ -30,7 +30,7 @@ const DropDownItem: FC<DropDownItemProps> = ({
     };
 
    useResizeWindow({
-       functionToExecute: () => resizeDropDownItem(properties),
+       callback: () => resizeDropDownItem(properties),
        dependencies: [isOpen]
    });
 

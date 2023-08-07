@@ -21,7 +21,7 @@ const Slider: FC<SliderProps> = ({
     const [swiperWidth, setSwiperWidth] = useState<number | undefined>(undefined);
 
     useResizeWindow({
-        functionToExecute: () => {
+        callback: () => {
             resizeSliderSize({
                 swiperRef,
                 setSwiperWidth

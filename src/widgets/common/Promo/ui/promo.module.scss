@@ -1,4 +1,5 @@
 .promoSection {
+    position: relative;
     height: 100vh;
 };
 
@@ -8,13 +9,22 @@
     width: 100%;
     object-fit: contain;
     object-position: 50% 0;
+    z-index: -1;
 };
 
+.promoOrnament {
+    width: 85%;
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+    z-index: -2;
+}
+
 .contentGroup {
-    margin: 454px 0 0 244px;
+    margin: 24.5vw 0 0 13.5vw;
 
     .h1 {
-        font-size: 60px;
+        font-size: 3.2vw;
         letter-spacing: 5px;
     };
 
